@@ -17,11 +17,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<Car> showCars(Integer count) {
-        if(count < 2 || count > 4) return cars;
-        List<Car> cars1 = new ArrayList<>();
-        for(int i = 0; i < count; i++) {
-            cars1.add(cars.get(i));
-        }
-        return cars1;
+        if(count < 1 || count > 4) return cars;
+        return cars.subList(0, count);
     }
 }
